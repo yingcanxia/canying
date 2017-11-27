@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace自定义名称，必须唯一，为了保证唯一，一般与文件同名 -->
+<mapper namespace="organization">
+    <insert id="organization_insert" parameterType="pd" keyProperty="string">
+        insert into organization (
+        ID
+		,NAME
+		,PHONE
+		,ADDRESS
+		,GPS_LAT
+		,GPS_LON
+		,SECURITY_LEVEL
+        )values
+		(
+		#{id}
+		,#{name}
+		,#{phone}
+		,#{address}
+		,#{x}
+		,#{y}
+		,#{level}
+		)
+        
+    </insert>
+    <select id="all"  parameterType="pd" resultType="pd">
+        
+		select * from organization 
+		<where>
+		    biaozhiwei=1
+		 	<if test="name != null and name!=''">
+   				and name like '%${name}%'
+  			</if>
+  			<if test="ogphone!=null and ogphone!=''">
+  			    and phone like '%${ogphone}%'
+  			</if>
+		</where>
+	</select>
+	<update id="update_og">
+	    update organization
+	    <set>
+	        <if test="name != null and name!=''">
+	             name = #{name},
+	        </if>
+	        <if test="phone!=null and phone!=''">
+	            phone=#{phone},
+	        </if>
+	        <if test="address!=null and address!=''">
+	            address=#{address},
+	        </if>
+	        <if test="x!=null and x!=''">
+	            GPS_LAT=#{x},
+	        </if>
+	        <if test="y!=null and y!=''">
+	            GPS_LON=#{y},
+	        </if>
+	        <if test="level!=null and level!=''">
+	            SECURITY_LEVEL=#{level}
+	        </if>
+	    </set>
+	    where id=#{id}
+	</update>
+	<update id="delete_og">
+	    update organization
+	    <set>
+	        biaozhiwei=0
+	    </set>
+	    where id=#{id}
+	</update>
+	<update id="rp_jielian">
+	    update rp
+	    <set>
+	        biaozhiwei=0
+	    </set>
+	    where fk_organization_id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="log">
+	<insert id="insert_accident_log" parameterType="map" keyProperty="string">
+		insert into accident_log 
+		(
+		ID
+		,NAME
+		,RECORD_GPS_LAT
+		,RECORD_GPS_LON
+		,ROLE
+		,FK_USER_ID
+		,TIME
+		,INTERNAL_TIME
+		)values
+		(
+		#{id}
+		,#{name}
+		,#{record_GPS_lat}
+		,#{record_GPS_lon}
+		,#{role}
+		,#{fk_user_id}
+		,#{time}
+		,#{time}
+		)
+	</insert>
+	<insert id="insert_message_log" parameterType="pd" keyProperty="string">
+	insert into message_log 
+		(
+		ID
+		,TIME
+		,SENDER
+		,RECEIVER
+		,STORE_PATH
+		,TEXT_BODY
+		,TYPE
+		)values
+		(
+		#{id}
+		,#{time}
+		,#{sender}
+		,#{receiver}
+		,#{store_path}
+		,#{text_body}
+		,#{type}
+		)
+	</insert>
+	<select id="userUnread_messages" parameterType="pd" resultType="pd">
+	    select * from message_log
+	    <where>
+	        receiver=#{usphone}
+	        and statue=0
+	    </where>
+	    order by time
+	</select>
+	<select id="Untreated_accident" parameterType="pd" resultType="pd">
+	    select * from accident_log
+	    <where>
+	        statue=0
+	    </where>
+	</select>
+	<select id="find_untreated_accident_log" parameterType="pd" resultType="pd">
+		select * from accident_log
+		<where>
+			statue=0
+		</where>
+		order by time desc
+	</select>
+	<select id="find_treated_accident_log" parameterType="pd" resultType="pd">
+		select * from accident_log
+		<where>
+			statue=1
+		</where>
+		order by internal_time desc
+	</select>
+	<update id="delete_accident">
+	    update accident_log
+	    <set>
+	        statue=1,
+	        internal_time=#{internal_time}
+	    </set>
+	    where id=#{id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

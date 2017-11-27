@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace自定义名称，必须唯一，为了保证唯一，一般与文件同名 -->
+<mapper namespace="fed">
+	<insert id="insert_fed" parameterType="pd" keyProperty="string">
+		insert into fed 
+		(
+		ID
+		,NAME
+		,PHONE
+		,PASSWD
+		,RESPONS_AREA
+		,CONTACT
+		,TOKEN
+		)values
+		(
+		#{id}
+		,#{name}
+		,#{phone}
+		,#{passwd}
+		,#{respons_area}
+		,#{contact}
+		,#{token}
+		)
+	</insert>
+	<insert id="insert_rp" parameterType="pd" keyProperty="string">
+		insert into rp 
+		(
+		ID
+		,NAME
+		,PHONE
+		,PASSWD
+		,FK_ORGANIZATION_ID
+		)values
+		(
+		#{id}
+		,#{name}
+		,#{phone}
+		,#{passwd}
+		,#{ogid}
+		)
+	</insert>
+	<select id="login"  parameterType="pd" resultType="pd">
+		select * from fed 
+		<where> 
+			phone=#{phone}
+		</where>
+	    
+	</select>
+	<select id="findRp"  parameterType="pd" resultType="pd">
+		select * from rp 
+		<where>
+		    biaozhiwei=1
+		    <if test="id != null and id!=''">
+   				and id = #{id}
+  			</if>
+		    <if test="name != null and name!=''">
+   				and name like '%${name}%'
+  			</if>
+  			<if test="phone != null and phone!=''">
+   				and phone like '%${phone}%'
+  			</if>
+  			<if test="ogid != null and ogid!=''">
+   				 and fk_organization_id = #{ogid}
+  			</if>
+		</where>
+	</select>
+	<select id="chachong_fed_name" parameterType="pd" resultType="pd">
+	    select * from fed
+	    <where>
+			name=#{name}
+	    </where>
+	</select>
+	<select id="findIs"  parameterType="pd" resultType="pd">
+		select * from employee 
+		<where>
+		    biaozhiwei=1
+		    <if test="id != null and id!=''">
+   				and id = #{id}
+  			</if>
+		    <if test="name != null and name!=''">
+   				and name = #{name}
+  			</if>
+  			<if test="ogid != null and ogid!=''">
+   				 and fk_organization_id = #{ogid}
+  			</if>
+		</where>
+	</select>
+	<update id="update_rp">
+		update rp 
+		<set>
+		    <if test="name != null and name!=''">
+		        name = #{name},
+		    </if>
+		    <if test="phone != null and phone!=''">
+		        phone=#{phone},
+		    </if>
+		    <if test="password != null and password!=''">
+		        passwd=#{password},
+		    </if>
+		</set>
+		    where id=#{id}
+	    
+	</update>
+	<update id="delete_rp">
+		update rp 
+		<set>
+		    biaozhiwei=0
+		</set>
+		    where id=#{id}
+	    
+	</update>
+	<update id="update_passwd">
+	    update fed
+	    <set>
+	        passwd=#{newpwd}
+	    </set>
+	    where id=#{id}
+	</update>
+</mapper>

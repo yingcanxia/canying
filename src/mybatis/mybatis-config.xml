@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="true" /><!-- 全局映射器启用缓存 -->
+<!--         配置执行器，REUSE预编译    -->
+        <setting name="defaultExecutorType" value="REUSE" /> 
+    </settings>
+<typeAliases>
+		<typeAlias type="com.cust.util.PageData" alias="pd"/><!-- 记得修改 -->
+		<typeAlias type="java.util.Map" alias="map"/>
+		<!-- 分页 -->
+		<typeAlias type="com.cust.util.Page" alias="Page"/><!-- 记得修改 -->
+		<!-- 当oracle数据库resultmap结果中的key为大写，通过使用hashmapEx，将Map结果中的key变成不区分大小写的 -->
+		<typeAlias alias="hashmapEx" type="org.apache.commons.collections.map.CaseInsensitiveMap"/>
+	</typeAliases>
+	
+</configuration>
