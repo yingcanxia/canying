@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Zhengce_fagui" table="ZHENGCE_FAGUI">
+        <id name="zhengce_id" type="int">
+            <column name="ZHENGCE_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="zhengce_timu" type="java.lang.String">
+            <column name="ZHENGCE_TIMU" />
+        </property>
+        <property name="zhengce_neirong" type="java.lang.String">
+            <column name="ZHENGCE_NEIRONG" />
+        </property>
+        <property name="zhengce_guanjiazi" type="java.lang.String">
+            <column name="ZHENGCE_GUANJIAZI" />
+        </property>
+        <property name="zhengce_type" type="int">
+            <column name="ZHENGCE_TYPE" />
+        </property>
+        <property name="zhengce_shangchuan_time" type="java.sql.Timestamp">
+            <column name="ZHENGCE_SHANGCHUAN_TIME" />
+        </property>
+        <property name="fk_zhengce_user_id" type="int">
+            <column name="FK_ZHENGCE_USER_ID" />
+        </property>
+        <property name="zhengce_biaozhiwei" type="int">
+            <column name="ZHENGCE_BIAOZHIWEI" />
+        </property>
+        <property name="zhengce_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="ZHENGCE_GENGXIN_SHIJIAN" />
+        </property>
+          <property name="zhengce_zhidingwei" type="int">
+            <column name="ZHENGCE_ZHIDINGWEI" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

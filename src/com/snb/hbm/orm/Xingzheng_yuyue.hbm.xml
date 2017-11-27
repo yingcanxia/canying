@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Xingzheng_yuyue" table="XINGZHENG_YUYUE">
+        <id name="xingzheng_yuyue_id" type="int">
+            <column name="XINGZHENG_YUYUE_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="xingzheng_yuyue_timu" type="java.lang.String">
+            <column name="XINGZHENG_YUYUE_TIMU" />
+        </property>
+        <property name="xingzheng_yuyue_riqi" type="java.sql.Timestamp">
+            <column name="XINGZHENG_YUYUE_RIQI" />
+        </property>
+        <property name="xingzheng_yuyue_shijianduan" type="java.lang.String">
+            <column name="XINGZHENG_YUYUE_SHIJIANDUAN" />
+        </property>
+        <property name="xingzheng_yuyue_renyuan_xingming" type="java.lang.String">
+            <column name="XINGZHENG_YUYUE_RENYUAN_XINGMING" />
+        </property>
+        <property name="xingzheng_yuyue_renyuan_dianhua" type="java.lang.String">
+            <column name="XINGZHENG_YUYUE_RENYUAN_DIANHUA" />
+        </property>
+        <property name="fk_xingzheng_yuyue_mubiao_keshi_id" type="int">
+            <column name="FK_XINGZHENG_YUYUE_MUBIAO_KESHI_ID" />
+        </property>
+        <property name="xingzheng_yuyue_zhuangtai" type="int">
+            <column name="XINGZHENG_YUYUE_ZHUANGTAI" />
+        </property>
+        <property name="fk_xingzheng_yuyue_user_id" type="int">
+            <column name="FK_XINGZHENG_YUYUE_USER_ID" />
+        </property>
+        <property name="xingzheng_yuyue_biaozhiwei" type="int">
+            <column name="XINGZHENG_YUYUE_BIAOZHIWEI" />
+        </property>
+        <property name="xingzheng_yuyue_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="XINGZHENG_YUYUE_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="xingzheng_yuyue_zhuangtai_tz" type="int">
+            <column name="XINGZHENG_YUYUE_ZHUANGTAI_TZ" />
+        </property>
+        <property name="xingzheng_yuyue_fankui_neirong" type="java.lang.String">
+            <column name="XINGZHENG_YUYUE_FANKUI_NEIRONG" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-27 19:20:00 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Shuoming_wendang" table="SHUOMING_WENDANG">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="type" type="int">
+            <column name="TYPE" />
+        </property>
+        <property name="neirong" type="java.lang.String">
+            <column name="NEIRONG" />
+        </property>
+        <property name="shangchuan_shijian" type="java.sql.Timestamp">
+            <column name="SHANGCHUAN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>

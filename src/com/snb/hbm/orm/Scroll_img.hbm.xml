@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-27 11:00:49 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Scroll_img" table="SCROLL_IMG">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="timu" type="java.lang.String">
+            <column name="TIMU" />
+        </property>
+        <property name="tupian_neirong" type="java.lang.String">
+            <column name="TUPIAN_NEIRONG" />
+        </property>
+        <property name="shangchuan_shijan" type="java.sql.Timestamp">
+            <column name="SHANGCHUAN_SHIJAN" />
+        </property>
+        <property name="tupian_lianjie" type="java.lang.String">
+            <column name="TUPIAN_LIANJIE" />
+        </property>
+        <property name="biaozhiwei" type="int">
+            <column name="BIAOZHIWEI" />
+        </property>
+        <property name="fk_user_id" type="int">
+            <column name="FK_USER_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

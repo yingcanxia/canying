@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Nongmin_suqiu" table="NONGMIN_SUQIU">
+        <id name="nongmin_suqiu_id" type="int">
+            <column name="NONGMIN_SUQIU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="nongmin_suqiu_timu" type="java.lang.String">
+            <column name="NONGMIN_SUQIU_TIMU" />
+        </property>
+        <property name="nongmin_suqiu_neirong" type="java.lang.String">
+            <column name="NONGMIN_SUQIU_NEIRONG" />
+        </property>
+        <property name="nongmin_suqiu_tupian_lianjie" type="java.lang.String">
+            <column name="NONGMIN_SUQIU_TUPIAN_LIANJIE" />
+        </property>
+        <property name="fk_nongmin_suqiu_user_id" type="int">
+            <column name="FK_NONGMIN_SUQIU_USER_ID" />
+        </property>
+        <property name="nongmin_suqiu_renyuan_xingming" type="java.lang.String">
+            <column name="NONGMIN_SUQIU_RENYUAN_XINGMING" />
+        </property>
+        <property name="nongmin_suqiu_renyuan_dianhua" type="java.lang.String">
+            <column name="NONGMIN_SUQIU_RENYUAN_DIANHUA" />
+        </property>
+       <!--  <property name="fk_nongmin_suqiu_huifu_jiegou_id" type="int">
+            <column name="FK_NONGMIN_SUQIU_HUIFU_JIEGOU_ID" />
+        </property> -->
+        <property name="state" type="int">
+            <column name="STATE" />
+        </property>
+        <property name="nongmin_suqiu_biaozhiwei" type="int">
+            <column name="NONGMIN_SUQIU_BIAOZHIWEI" />
+        </property>
+        <property name="nongmin_suqiu_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="NONGMIN_SUQIU_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="nongmin_suqiu_zhidingwei" type="int">
+            <column name="NONGMIN_SUQIU_ZHIDINGWEI" />
+        </property>
+        <property name="state_tz" type="int">
+            <column name="STATE_TZ" />
+        </property>
+    </class>
+</hibernate-mapping>

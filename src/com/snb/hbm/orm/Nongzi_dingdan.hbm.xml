@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Nongzi_dingdan" table="NONGZI_DINGDAN">
+        <id name="dingdan_id" type="int">
+            <column name="DINGDAN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="dingdan_shuliang" type="int">
+            <column name="DINGDAN_SHULIANG" />
+        </property>
+        <property name="dingdan_name" type="java.lang.String">
+            <column name="DINGDAN_NAME" />
+        </property>
+        <property name="dingdan_dizhi" type="java.lang.String">
+            <column name="DINGDAN_DIZHI" />
+        </property>
+        <property name="dingdan_dianhua" type="java.lang.String">
+            <column name="DINGDAN_DIANHUA" />
+        </property>
+        <property name="fk_dingdan_user_id" type="int">
+            <column name="FK_DINGDAN_USER_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

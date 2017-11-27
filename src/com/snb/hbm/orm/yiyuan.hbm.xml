@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.YiYuan" table="YIYUAN">
+        <id name="yiyuan_id" type="int">
+            <column name="YIYUAN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="yiyuan_mingcheng" type="java.lang.String">
+            <column name="YIYUAN_MINGCHENG" />
+        </property>
+        <property name="yiyuan_dizhi" type="java.lang.String">
+            <column name="YIYUAN_DIZHI" />
+        </property>
+        <property name="yiyuan_xiangqing" type="java.lang.String">
+            <column name="YIYUAN_XIANGQING" />
+        </property>
+        <property name="yiyuan_biaozhiwei" type="int">
+            <column name="YIYUAN_BIAOZHIWEI" />
+        </property>
+        <property name="yiyuan_zhidingwei" type="int">
+            <column name="YIYUAN_ZHIDINGWEI" />
+        </property>
+        <property name="yiyuan_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="YIYUAN_GENGXIN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>

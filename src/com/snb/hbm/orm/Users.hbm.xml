@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Users" table="USERS">
+        <id name="user_id" type="int">
+            <column name="USER_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="user_pwd" type="java.lang.String">
+            <column name="USER_PWD" />
+        </property>
+        <property name="user_yonghuming_id" type="java.lang.String">
+            <column name="USER_YONGHUMING_ID" />
+        </property>
+        <property name="user_xingming" type="java.lang.String">
+            <column name="USER_XINGMING" />
+        </property>
+        <property name="user_dianhua" type="java.lang.String">
+            <column name="USER_DIANHUA" />
+        </property>
+        <property name="user_dizhi" type="java.lang.String">
+            <column name="USER_DIZHI" />
+        </property>
+        <property name="user_shenfenzheng_haoma" type="java.lang.String">
+            <column name="USER_SHENFENZHENG_HAOMA" />
+        </property>
+        <property name="user_leixing" type="java.lang.String">
+            <column name="USER_LEIXING" />
+        </property>
+        <property name="user_zhuce_shijian" type="java.sql.Timestamp">
+            <column name="USER_ZHUCE_SHIJIAN" />
+        </property>
+        <property name="user_lastlogin" type="java.sql.Timestamp">
+            <column name="USER_LASTLOGIN" />
+        </property>
+         <property name="user_biaozhiwei" type="int">
+            <column name="USER_BIAOZHIWEI" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Fabu_nongmin_suqiu" table="FABU_NONGMIN_SUQIU">
+        <id name="fabu_nongmin_suqiu_id" type="int">
+            <column name="FABU_NONGMIN_SUQIU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="fabu_nongmin_suqiu_timu" type="java.lang.String">
+            <column name="FABU_NONGMIN_SUQIU_TIMU" />
+        </property>
+        <property name="fabu_nongmin_suqiu_neirong" type="java.lang.String">
+            <column name="FABU_NONGMIN_SUQIU_NEIRONG" />
+        </property>
+        <property name="fabu_nongmin_suqiu_tupian_lianjie" type="java.lang.String">
+            <column name="FABU_NONGMIN_SUQIU_TUPIAN_LIANJIE" />
+        </property>
+        <property name="fabu_huifu_nongmin_suqiu_neirong" type="java.lang.String">
+            <column name="FABU_HUIFU_NONGMIN_SUQIU_NEIRONG" />
+        </property>
+        <property name="fabu_biaozhiwei" type="int">
+            <column name="FABU_BIAOZHIWEI" />
+        </property>
+        <property name="fk_fabu_nongmin_suqiu_user_id" type="int">
+            <column name="FK_FABU_NONGMIN_SUQIU_USER_ID" />
+        </property>
+        <property name="fabu_suqiu_renyuan_xingming" type="java.lang.String">
+            <column name="FABU_SUQIU_RENYUAN_XINGMING" />
+        </property>
+        <property name="fabu_suqiu_renyuan_dianhua" type="java.lang.String">
+            <column name="FABU_SUQIU_RENYUAN_DIANHUA" />
+        </property>
+        <property name="fabu_nongmin_suqiu_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="FABU_NONGMIN_SUQIU_GENGXIN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>

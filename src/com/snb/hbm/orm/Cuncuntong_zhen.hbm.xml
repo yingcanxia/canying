@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Cuncuntong_zhen" table="CUNCUNTONG_ZHEN">
+        <id name="zhen_id" type="int">
+            <column name="ZHEN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="zhen_mingcheng" type="java.lang.String">
+            <column name="ZHEN_MINGCHENG" />
+        </property>
+        <property name="zhen_miaoshu" type="java.lang.String">
+            <column name="ZHEN_MIAOSHU" />
+        </property>
+        <property name="fk_user_id" type="int">
+            <column name="FK_USER_ID" />
+        </property>
+         <property name="zhen_chuanjian_shijian" type="java.sql.Timestamp">
+            <column name="ZHEN_CHUANJIAN_SHIJIAN" />
+        </property>
+        <property name="zhen_biaozhiwei" type="int">
+            <column name="ZHEN_BIAOZHIWEI" />
+        </property>
+        <property name="zhen_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="ZHEN_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

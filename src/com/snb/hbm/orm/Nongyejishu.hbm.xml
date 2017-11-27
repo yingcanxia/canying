@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-7 21:43:00 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Nongyejishu" table="NONGYEJISHU">
+        <id name="jishu_id" type="int">
+            <column name="JISHU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="jishu_type" type="int">
+            <column name="JISHU_TYPE" />
+        </property>
+        <property name="shipin_timu" type="java.lang.String">
+            <column name="SHIPIN_TIMU" />
+        </property>
+        <property name="wenzhang_timu" type="java.lang.String">
+            <column name="WENZHANG_TIMU" />
+        </property>
+        <property name="yinpin_timu" type="java.lang.String">
+            <column name="YINPIN_TIMU" />
+        </property>
+        <property name="shipin_miao" type="java.lang.String">
+            <column name="SHIPIN_MIAO" />
+        </property>
+        <property name="wenzhang_neirong" type="java.lang.String">
+            <column name="WENZHANG_NEIRONG" />
+        </property>
+        <property name="yinpin_miao" type="java.lang.String">
+            <column name="YINPIN_MIAO" />
+        </property>
+        <property name="shipin_dizhi" type="java.lang.String">
+            <column name="SHIPIN_DIZHI" />
+        </property>
+        <property name="yinpin_dizhi" type="java.lang.String">
+            <column name="YINPIN_DIZHI" />
+        </property>
+        <property name="chuangjian_time" type="java.sql.Timestamp">
+            <column name="CHUANGJIAN_TIME" />
+        </property>
+         <property name="gengxin_time" type="java.sql.Timestamp">
+            <column name="GENGXIN_TIME" />
+        </property>
+        <property name="fk_user_id" type="int">
+            <column name="FK_USER_ID" />
+        </property>
+        <property name="jishu_biaozhiwei" type="int">
+            <column name="JISHU_BIAOZHIWEI" />
+        </property>
+         <property name="jishu_zhidingwei" type="int">
+            <column name="JISHU_ZHIDINGWEI" />
+        </property>
+       <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

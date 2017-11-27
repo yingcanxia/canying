@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Zhanxiao_xinxi" table="ZHANXIAO_XINXI">
+        <id name="zhanxiao_xinxi_id" type="int">
+            <column name="ZHANXIAO_XINXI_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="zhanxiao_xinxi_timu" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_TIMU" />
+        </property>
+        <property name="zhanxiao_xinxi_shangpin_mingcheng" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_SHANGPIN_MINGCHENG" />
+        </property>
+        <property name="zhanxiao_xinxi_shangpin_miaoshu" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_SHANGPIN_MIAOSHU" />
+        </property>
+        <property name="zhanxiao_xinxi_tupian_lianjie" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_TUPIAN_LIANJIE" />
+        </property>
+        <property name="zhanxiao_xinxi_dizhi" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_DIZHI" />
+        </property>
+        <property name="zhanxiao_xinxi_lianxifangshi" type="java.lang.String">
+            <column name="ZHANXIAO_XINXI_LIANXIFANGSHI" />
+        </property>
+        <property name="fk_zhanxiao_xinxi_user_id" type="int">
+            <column name="FK_ZHANXIAO_XINXI_USER_ID" />
+        </property>
+         <property name="zhanxiao_xinxi_biaozhiwei" type="int">
+            <column name="ZHANXIAO_XINXI_BIAOZHIWEI" />
+        </property>
+        <property name="zhanxiao_xinxi_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="ZHANXIAO_XINXI_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="zhanxiao_xinxi_zhidingwei" type="int">
+            <column name="ZHANXIAO_XINXI_ZHIDINGWEI" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

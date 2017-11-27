@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-31 12:07:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Xinwen" table="XINWEN">
+        <id name="xinwen_id" type="int">
+            <column name="XINWEN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="xinwen_timu" type="java.lang.String">
+            <column name="XINWEN_TIMU" />
+        </property>
+        <property name="xinwen_biaozhiwei" type="int">
+            <column name="XINWEN_BIAOZHIWEI" />
+        </property>
+        <property name="xinwen_neirong" type="java.lang.String">
+            <column name="XINWEN_NEIRONG" />
+        </property>
+        <property name="xinwen_shangchuang_riqi" type="java.sql.Timestamp">
+            <column name="XINWEN_SHANGCHUANG_RIQI" />
+        </property>
+        <property name="xinwen_gengxin_riqi" type="java.sql.Timestamp">
+            <column name="XINWEN_GENGXIN_RIQI" />
+        </property>
+        <property name="fk_shangchuang_userid" type="int">
+            <column name="FK_SHANGCHUANG_USERID" />
+        </property>
+        <property name="xinwen_tupian" type="java.lang.String">
+            <column name="XINWEN_TUPIAN" />
+        </property>
+         <property name="xinwen_zhidingwei" type="int">
+            <column name="XINWEN_ZHIDINGWEI" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-1 11:16:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Rexian" table="REXIAN">
+        <id name="rexian_id" type="int">
+            <column name="REXIAN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="zhuanjia_name" type="java.lang.String">
+            <column name="ZHUANJIA_NAME" />
+        </property>
+        <property name="banshi_name" type="java.lang.String">
+            <column name="BANSHI_NAME" />
+        </property>
+        <property name="zhuanjia_tupain" type="java.lang.String">
+            <column name="ZHUANJIA_TUPAIN" />
+        </property>
+        <property name="banshi_tupian" type="java.lang.String">
+            <column name="BANSHI_TUPIAN" />
+        </property>
+        <property name="banshi_danwei" type="java.lang.String">
+            <column name="BANSHI_DANWEI" />
+        </property>
+        <property name="banshi_dizhi" type="java.lang.String">
+            <column name="BANSHI_DIZHI" />
+        </property>
+        <property name="rexian_leixing" type="int">
+            <column name="REXIAN_LEIXING" />
+        </property>
+        <property name="zhuanjia_dianhua" type="java.lang.String">
+            <column name="ZHUANJIA_DIANHUA" />
+        </property>
+         <property name="rexian_biaozhiwei" type="int">
+            <column name="REXIAN_BIAOZHIWEI" />
+        </property>
+        <property name="rexian_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="REXIAN_GENGXIN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-30 19:54:56 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Gongqiu_xinxi" table="GONGQIU_XINXI">
+        <id name="gongqiu_xinxi_id" type="int">
+            <column name="GONGQIU_XINXI_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="gongqiu_xinxi_leixing" type="int">
+            <column name="GONGQIU_XINXI_LEIXING" />
+        </property>
+        <property name="gongqiu_xinxi_shangpin" type="java.lang.String">
+            <column name="GONGQIU_XINXI_SHANGPIN" />
+        </property>
+        <property name="fk_gongqiu_xinxi_user_id" type="int">
+            <column name="FK_GONGQIU_XINXI_USER_ID" />
+        </property>
+        <property name="gongqiu_xinxi_shenhe_zhuangtai" type="int">
+            <column name="GONGQIU_XINXI_SHENHE_ZHUANGTAI" />
+        </property>
+        <property name="gongqiu_xinxi_miaoshu" type="java.lang.String">
+            <column name="GONGQIU_XINXI_MIAOSHU" />
+        </property>
+        <property name="gongqiu_xinxi_youxiaoqi" type="java.sql.Timestamp">
+            <column name="GONGQIU_XINXI_YOUXIAOQI" />
+        </property>
+        <property name="gongqiu_xinxi_tupian_lianjie" type="java.lang.String">
+            <column name="GONGQIU_XINXI_TUPIAN_LIANJIE" />
+        </property>
+        <property name="gongqiu_xinxi_renyuan_dianhua" type="java.lang.String">
+            <column name="GONGQIU_XINXI_RENYUAN_DIANHUA" />
+        </property>
+        <property name="gongqiu_xinxi_biaozhiwei" type="int">
+            <column name="GONGQIU_XINXI_BIAOZHIWEI" />
+        </property>
+        <property name="gongqiu_xinxi_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="GONGQIU_XINXI_GENGXIN_SHIJIAN" />
+        </property>
+         <property name="gongqiu_xinxi_type" type="int">
+            <column name="GONGQIU_XINXI_TYPE" />
+        </property>
+        <property name="gongqiu_xinxi_name" type="java.lang.String">
+            <column name="GONGQIU_XINXI_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

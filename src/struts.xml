@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC     
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"     
+    "http://struts.apache.org/dtds/struts-2.0.dtd">    
+<struts>  
+    	<constant name="struts.multipart.maxSize" value="1024000000"/>  
+    <package namespace="/" name="struts2" extends="struts-default,json-default">  
+    	<action name="zhuanjia_*" method="{1}" class="ZhuanJiaAct">  
+            <result name="success_query">/zhuanjia-list.jsp</result>
+            <result name="success_save" type="chain">zhuanjia_query</result>
+            <result name="success_update" type="chain">zhuanjia_query</result>
+            <result name="success_delete" type="chain">zhuanjia_query</result>
+            <!-- <result name="returnJson" type="json"></result> -->
+        </action>
+   	 	<action name="keshi_*" method="{1}" class="KeShiAct">  
+            <result name="success_query">/keshi-list.jsp</result>
+            <result name="success_save" type="chain">keshi_query</result>
+            <result name="success_update" type="chain">keshi_query</result>
+            <result name="success_delete" type="chain">keshi_query</result>
+            <!-- <result name="returnJson" type="json"></result> -->
+        </action>
+  		<action name="yiyuan_*" method="{1}" class="YiYuanAct">  
+            <result name="success_query">/yiyuan-list.jsp</result>
+            <result name="success_save" type="chain">yiyuan_query</result>
+            <result name="success_update" type="chain">yiyuan_query</result>
+            <result name="success_delete" type="chain">yiyuan_query</result>
+            <!-- <result name="returnJson" type="json"></result> -->
+        </action>
+    
+        <action name="addtest" class="addtest">  
+            <result name="success">/test/success.html</result>  
+            <result name="input">/WEB-INF/index.jsp</result>  
+            <!-- <result name="returnJson" type="json"></result> -->
+        </action>  
+        <action name="chachong" class="Chachong">  
+            <result name="success">/login.html</result>  
+            <result name="input">/WEB-INF/index.jsp</result>  
+            <result name="returnJson" type="json"></result>
+        </action> 
+        <action name="adduser" class="AddUser">
+        	<result name="success" >
+        		/index.html
+        	</result> 
+        	<result name="false" >
+        		/register.html
+        	</result> 
+        </action>
+        <action name="login" class="UserLogin">  
+            <result name="success">main2.jsp</result>  
+            <!--  <result name="successB">/loginSuccess2.jsp</result> -->
+            <result name="input">/WEB-INF/index.jsp</result> 
+             <result name="false">/index.html</result>   
+        </action>
+        <action name="nmsq_*" method="{1}" class="NMSQ">  
+            <result name="success_query">/nmsq-list.jsp</result>
+            <result name="success_update" type="chain">nmsq_query</result>
+            <result name="success_delete" type="chain">nmsq_query</result>
+        </action>
+        <action name="xzyy_*" method="{1}" class="XZYY">  
+            <result name="success_query">/xzyy-list.jsp</result>
+             <result name="success_update" type="chain">xzyy_query</result>
+            <result name="success_delete" type="chain">xzyy_query</result>
+        </action>
+        <action name="zxxx_*" method="{1}" class="ZXXX">  
+            <result name="success_query">/zxxx-list.jsp</result>
+            <result name="success_update" type="chain">zxxx_query</result>
+            <result name="success_save" type="chain">zxxx_query</result>
+            <result name="success_delete" type="chain">zxxx_query</result>
+        </action>
+        <action name="gqxx_*" method="{1}" class="GQXX">  
+            <result name="success_query">/gqxx-list.jsp</result>
+            <result name="success_update" type="chain">gqxx_query</result>
+            <result name="success_delete" type="chain">gqxx_query</result>
+        </action>
+        <action name="zcfg_*" method="{1}" class="ZCFG">  
+            <result name="success_query">/zcfg-list.jsp</result>
+            <result name="success_update" type="chain">zcfg_query</result>
+            <result name="success_save" type="chain">zcfg_query</result>
+            <result name="success_delete" type="chain">zcfg_query</result>
+            <result name="success_addNew" type="chain">zcfg_query</result>
+        </action>
+        <action name="jgtb_*" method="{1}" class="JGTB">  
+            <result name="success_query">/jgtb-list.jsp</result>
+            <result name="success_update" type="chain">jgtb_query</result>
+            <result name="success_save" type="chain">jgtb_query</result>
+            <result name="success_delete" type="chain">jgtb_query</result>
+        </action>
+        <action name="rxdh_*" method="{1}" class="RXDH">  
+            <result name="success_query">/rexian-list.jsp</result>
+            <result name="success_update" type="chain">rxdh_query</result>
+            <result name="success_save" type="chain">rxdh_query</result>
+            <result name="success_delete" type="chain">rxdh_query</result>
+        </action>
+         <action name="nzcg_*" method="{1}" class="NZCG">  
+            <result name="success_query">/nzcg-list.jsp</result>
+            <result name="success_update" type="chain">nzcg_query</result>
+            <result name="success_save" type="chain">nzcg_query</result>
+            <result name="success_delete" type="chain">nzcg_query</result>
+        </action>
+        <action name="nstx_*" method="{1}" class="NSTX">  
+            <result name="success_query">/nstx-list.jsp</result>
+            <result name="success_update" type="chain">nstx_query</result>
+            <result name="success_save" type="chain">nstx_query</result>
+            <result name="success_delete" type="chain">nstx_query</result>
+        </action>
+        <action name="cctc_*" method="{1}" class="CCTC">  
+            <result name="success_query">/cctc-list.jsp</result>
+            <result name="success_update" type="chain">cctc_query</result>
+            <result name="success_save" type="chain">cctc_query</result>
+            <result name="success_delete" type="chain">cctc_query</result>
+        </action>
+        <action name="cctz_*" method="{1}" class="CCTZ">  
+            <result name="success_query">/cctz-list.jsp</result>
+            <result name="success_update" type="chain">cctz_query</result>
+            <result name="success_save" type="chain">cctz_query</result>
+            <result name="success_delete" type="chain">cctz_query</result>
+        </action>
+        <action name="nyjs_*" method="{1}" class="NYJS">  
+            <result name="success_query">/nyjs-list.jsp</result>
+            <result name="success_update" type="chain">nyjs_query</result>
+            <result name="success_save" type="chain">nyjs_query</result>
+            <result name="success_delete" type="chain">nyjs_query</result>
+             <result name="success_addNew" type="chain">nyjs_query</result>
+        </action>
+        <action name="xinwen_*" method="{1}" class="XinwenShow">  
+            <result name="success_query">/xw-list.jsp</result>
+            <result name="success_update" type="chain">xinwen_query</result>
+            <result name="success_save" type="chain">xinwen_query</result>
+            <result name="success_delete" type="chain">xinwen_query</result>
+            <result name="success_addNew" type="chain">xinwen_query</result>
+        </action>
+        <action name="fbsq_*" method="{1}" class="FBSQ">  
+            <result name="success_query">/fbsq-list.jsp</result>
+            <result name="success_update" type="chain">fbsq_query</result>
+            <result name="success_save" type="chain">fbsq_query</result>
+            <result name="success_delete" type="chain">fbsq_query</result>
+        </action>
+        <action name="hydj_*" method="{1}" class="HYDJ">  
+            <result name="success_query">/hy-list.jsp</result>
+            <result name="success_update" type="chain">hydj_query</result>
+            <result name="success_save" type="chain">hydj_query</result>
+            <result name="success_delete" type="chain">hydj_query</result>
+        </action>
+        <action name="rztj_*" method="{1}" class="RZTJ">  
+            <result name="success_gztj">/rzt-list.jsp</result>
+            <result name="success_lltj">/lltj-list.jsp</result>
+        </action>
+         <action name="rxjs_*" method="{1}" class="RXJS">
+            <result name="success_query">/rxnj-list.jsp</result>
+            <result name="success_queryyixuan">/rxjsyx-list.jsp</result>
+            <result name="success_save" type="chain">rxjs_queryweixuan</result>
+            <result name="success_update" type="chain">rxjs_queryweixuan</result>
+        </action>
+        <action name="lltj_*" method="{1}" class="LLTJ">
+            <result name="success_queryzongti">/lltj-list.jsp</result>
+            <result name="success_queryGenie">/rxjsyx-list.jsp</result>
+            
+        </action>
+        <action name="user_*" method="{1}" class="USER">
+            <result name="success_query">/user-list.jsp</result>
+            <result name="query_manager">/manager-list.jsp</result>
+            <result name="query_user0">/user0-list.jsp</result>
+            <result name="success_updatec" type="chain" >user_queryuser0</result>
+            <result name="success_update" type="chain" >user_query</result>
+            <result name="success_delete" type="chain" >user_query</result>
+            <result name="update_password_success">/welcome.html</result>
+            <result name="false">/user-table.jsp</result>
+        </action>
+        <action name="si_*" method="{1}" class="SI">
+            <result name="success_query">/appimg-list.jsp</result>
+            <result name="success_save" type="chain" >si_query</result>
+            <result name="success_update" type="chain" >si_query</result>
+            <result name="success_delete" type="chain" >si_query</result>
+           <!--  <result name="update_password_success">/welcome.html</result> -->
+        </action>
+        <action name="smwd_*" method="{1}" class="SMWD">  
+            <result name="success_query">/smwd-list.jsp</result>
+            <result name="success_update" type="chain">smwd_query</result>
+            <result name="success_save" type="chain">smwd_query</result>
+            <result name="success_delete" type="chain">smwd_query</result>
+        </action>
+      	<action name="count" class="Count">  
+            <result name="keshi">/keshi-table.jsp</result>  
+            <result name="sq">/nmsq-table.jsp</result>  
+            <result name="nz">/nzcg-table.jsp</result>
+            <result name="yiyuan">/yiyuan-table.jsp</result>
+            <result name="zhuanjia">/zhuanjia-table.jsp</result>
+            <result name="tx">/nstx-table.jsp</result> 
+            <result name="yy">/xzyy-table.jsp</result> 
+            <result name="zx">/zxxx-table.jsp</result> 
+            <result name="gq">/gqxx-table.jsp</result>
+            <result name="zc">/zcfg-table.jsp</result>
+            <result name="jg">/jgtb-table.jsp</result>
+            <result name="rx">/rexian-table.jsp</result>
+            <result name="cun">/cctc-table.jsp</result>
+            <result name="zhen">/cctz-table.jsp</result>
+            <result name="jsB">/nyjs-table.jsp</result>
+            <result name="jsA">/nyjswz-table.jsp</result>
+            <result name="xw">/xw-table.jsp</result>
+            <result name="fb">/fbsq-table.jsp</result>
+            <result name="hy">/hy-table.jsp</result>
+            <result name="si">/appimg-table.jsp</result>
+            <result name="sm">/smwd-table.jsp</result>
+            <result name="input">/WEB-INF/index.jsp</result>
+            <result name="returnJson" type="json"></result>
+        </action>   
+    </package>  
+</struts>   

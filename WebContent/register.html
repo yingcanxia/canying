@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="css/register.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			function test() {
+				var t1 = document.getElementById("user_yonghuming_id").value.toLowerCase();
+				var t2 = document.getElementById("ln");
+				var t = /^\w{6,20}$/;
+				if(t.test(t1)) {
+					$.ajax({
+						url: 'chachong.action',
+						type: 'POST',
+						data: {
+							"user_yonghuming_id": t1
+						},
+						type: 'post',
+						dataType: 'json',
+						success: function(data) {
+							if(data.data.result == "no") {
+								t2.innerHTML = "用户名已存在";
+							} else {
+								t2.innerHTML = "用户名可用";
+							}
+						},
+						error: function(data) {
+							alert(data.val);
+							alert('提交失败！');
+						}
+					});
+				} else {
+					t2.innerHTML = "用户名需要使用6到20个字母、下划线或数字";
+				}
+			}
+
+			function check2() {
+				
+				var t1 = document.getElementById("Password").value.toLowerCase();
+				var t2 = document.getElementById("Password2").value.toLowerCase();
+				var t3 = document.getElementById("ri");
+				if(t1 != t2) {
+					t3.innerHTML = "×";
+					return false;
+				} else {
+					t3.innerHTML = "√";
+					return true;
+				}
+
+			}
+
+			function ch1() {
+				var t1 = document.getElementById("Password").value.toLowerCase();
+				var t2 = document.getElementById("ri1");
+				var t = /^\w{6,20}$/;
+				if(t.test(t1)) {
+					t2.innerHTML = "√";
+					return true;
+				} else {
+					t2.innerHTML = "您的密码需要6到20位";
+					return false;
+				}
+			}
+
+			function checkage() {
+				var t1 = document.getElementById("age").value.toLowerCase();
+				var t2 = document.getElementById("ag");
+				var t = /^[0-9]{18}$/;
+				if(t1=="")return true;
+				if(t.test(t1)) {
+					t2.innerHTML = "√";
+					return true;
+				} else {
+					t2.innerHTML = "格式不正确";
+					return false;
+				}
+			}
+			function doSubmit(){
+				var t=document.getElementById("ln").innerHTML;
+				if(t=="用户名可用"){
+					if(ch1()&&check2()&&checkage()){
+						document.getElementById("form1").submit();
+					}else{
+					}
+				}else{
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="first">
+			<div class="title">欢迎您的注册</div>
+			<form id="form1" class="form1" action="adduser.action" method="post">
+
+				<div class="form1_list">
+					<label class="label">用&nbsp;户&nbsp;名：</label>
+					<input type="text" class="text"  id="user_yonghuming_id" name="user_yonghuming_id" onblur="test()"/>
+					<span class="span" id="ln"></span>
+				</div>
+				<div class="form1_list">
+					<label class="label">真&nbsp;实&nbsp;姓&nbsp;名:</label>
+					<input type="text" class="text" name="user_xingming" />
+					<!--<span class="span" id="span_email"></span>-->
+				</div>
+				<div class="form1_list">
+					<label class="label">联&nbsp;系&nbsp;电&nbsp;话:</label>
+					<input type="text" class="text"  name="user_dianhua" />
+					<!--<span class="span" id="span_email"></span>-->
+				</div>
+				<div class="form1_list">
+					<label class="label">身&nbsp;份&nbsp;证&nbsp;号:</label>
+					<input type="text" class="text" id="age" name="user_shenfenzheng_haoma" />
+					<span class="span" id="ag"></span>
+				</div>
+				<div class="form1_list">
+					<label class="label">设&nbsp;置&nbsp;密&nbsp;码：</label>
+					<input type="password" class="text" id="Password" name="user_pwd"  onblur="ch1()"/>
+					<span class="span" id="ri1"></span>
+				</div>
+				<div class="form1_list">
+					<label class="label">确&nbsp;认&nbsp;密&nbsp;码：</label>
+					<input type="password" class="text" id="Password2" name="c_pwd" onblur="check2()" />
+					<span class="span" id="ri"></span>
+				</div>
+				<div class="form1_list">
+					<input class="button" type="button" onclick="doSubmit()" value="立 即 注 册" />
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>

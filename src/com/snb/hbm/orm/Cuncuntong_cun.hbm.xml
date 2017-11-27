@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-27 8:38:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Cuncuntong_cun" table="CUNCUNTONG_CUN">
+        <id name="cun_id" type="int">
+            <column name="CUN_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="fk_zhen_id" type="int">
+            <column name="FK_ZHEN_ID" />
+        </property>
+        <property name="cun_mingcheng" type="java.lang.String">
+            <column name="CUN_MINGCHENG" />
+        </property>
+        <property name="cun_miaoshu" type="java.lang.String">
+            <column name="CUN_MIAOSHU" />
+        </property>
+        <property name="fk_user_id" type="int">
+            <column name="FK_USER_ID" />
+        </property>
+         <property name="cun_chuanjian_shijian" type="java.sql.Timestamp">
+            <column name="CUN_CHUANJIAN_SHIJIAN" />
+        </property>
+        <property name="cun_biaozhiwei" type="int">
+            <column name="CUN_BIAOZHIWEI" />
+        </property>
+        <property name="cun_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="CUN_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

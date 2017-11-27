@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Huifu_nongmin_suqiu" table="HUIFU_NONGMIN_SUQIU">
+        <id name="huifu_nongmin_suqiu_id" type="int">
+            <column name="HUIFU_NONGMIN_SUQIU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="huifu_nongmin_suqiu_timu" type="java.lang.String">
+            <column name="HUIFU_NONGMIN_SUQIU_TIMU" />
+        </property>
+        <property name="huifu_nongmin_suqiu_neirong" type="java.lang.String">
+            <column name="HUIFU_NONGMIN_SUQIU_NEIRONG" />
+        </property>
+        <property name="fk_neirong_suqiu_yunashi_id" type="int">
+            <column name="FK_NEIRONG_SUQIU_YUNASHI_ID" />
+        </property>
+        <property name="huifu_nongmin_suqiu_chuanjian_shijian" type="java.sql.Timestamp">
+            <column name="HUIFU_NONGMIN_SUQIU_CHUANJIAN_SHIJIAN" />
+        </property>
+        <property name="huifu_nongmin_suqiu_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="HUIFU_NONGMIN_SUQIU_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="fk_huifu_nongmin_suqiu_user_id" type="int">
+            <column name="FK_HUIFU_NONGMIN_SUQIU_USER_ID" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

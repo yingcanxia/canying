@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd 
+	                    http://www.springframework.org/schema/tx 
+	                    http://www.springframework.org/schema/tx/spring-tx.xsd 
+	                    http://www.springframework.org/schema/aop 
+	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+  
+  <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	    <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+	    <property name="jdbcUrl" value="jdbc:mysql://123.56.199.85:3306/sannong2"></property>
+	    <property name="user" value="root"></property>
+	    <property name="password" value="root_wulianwang"></property>
+	    <!--连接池中保留的最小连接数。-->  
+	    <property name="minPoolSize" value="5"></property> 
+	    <!--连接池中保留的最大连接数。Default: 15 --> 
+	    <property name="maxPoolSize" value="30"></property> 
+	    <!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->   
+	    <property name="initialPoolSize" value="10"></property> 
+	    <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 --> 
+	    <property name="maxIdleTime" value="60"></property> 
+	    <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+	    <property name="acquireIncrement" value="5"></property> 
+    </bean>
+    <bean id="sessionFactory"  
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource">  
+        </property>  
+        <property name="mappingLocations">  
+            <list>  
+                <value>classpath:com/snb/hbm/orm/*.hbm.xml</value>  
+            </list>  
+        </property>  
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+                <prop key="hibernate.show_sql">true</prop>   
+                <prop key="hibernate.format_sql">true</prop> 
+<!--                 <prop key="hibernate.hbm2ddl.auto">update</prop>   -->
+            </props>  
+        </property>  
+    </bean>
+    
+    <bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 定义事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 定义方法的过滤规则 -->
+		<tx:attributes>
+			<tx:method name="save*" rollback-for="java.lang.Exception"/>
+			<tx:method name="delete*" rollback-for="java.lang.Exception"/>
+			<tx:method name="update*" rollback-for="java.lang.Exception"/>
+			<tx:method name="query*" rollback-for="java.lang.Exception"/>
+		</tx:attributes>
+	</tx:advice> 
+	<!-- 定义AOP -->
+	<aop:config>
+		<aop:advisor
+			pointcut="execution(* com.snb.services.impl..*.*(..))" advice-ref="txAdvice" />
+	</aop:config>
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/> 
+  
+    <bean id="BaseHibernateDAO" class="com.snb.hbm.dao.BaseHibernateDAO">  
+        <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>  
+	<bean id="SnbService" class="com.snb.services.impl.SnbService" scope="singleton"><!-- correct -->
+		<property name="dao" ref="BaseHibernateDAO"></property>
+	</bean>
+    <bean id="addtest" class="com.snb.action.addtest" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="AddUser" class="com.snb.action.AddUser" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="UserLogin" class="com.snb.action.UserLogin" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="Chachong" class="com.snb.action.Chachong" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="NMSQ" class="com.snb.action.NMSQ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="XZYY" class="com.snb.action.XZYY" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="ZXXX" class="com.snb.action.ZXXX" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="GQXX" class="com.snb.action.GQXX" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="ZCFG" class="com.snb.action.ZCFG" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="JGTB" class="com.snb.action.JGTB" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="RXDH" class="com.snb.action.RXDH" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="Count" class="com.snb.action.Count" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="NZCG" class="com.snb.action.NZCG" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="NSTX" class="com.snb.action.NSTX" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="CCTC" class="com.snb.action.CCTC" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="CCTZ" class="com.snb.action.CCTZ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="NYJS" class="com.snb.action.NYJS" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="XinwenShow" class="com.snb.action.XinwenShow" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="FBSQ" class="com.snb.action.FBSQ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="HYDJ" class="com.snb.action.HYDJ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="RZTJ" class="com.snb.action.RZTJ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="RXJS" class="com.snb.action.RXJS" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="USER" class="com.snb.action.USER" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="SI" class="com.snb.action.SI" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="SMWD" class="com.snb.action.SMWD" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="LLTJ" class="com.snb.action.LLTJ" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="YiYuanAct" class="com.snb.action.YiYuanAct" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="KeShiAct" class="com.snb.action.KeShiAct" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<bean id="ZhuanJiaAct" class="com.snb.action.ZhuanJiaAct" scope="prototype">
+		<property name="SnbService" ref="SnbService"></property>
+	</bean>
+	<!-- 
+	
+	
+	
+	<bean id="SameCityAction" class="com.WildWolf.action.SameCityAction" scope="prototype">correct
+		<property name="WildWolfService" ref="WildWolfService"></property>
+	</bean> -->
+<!-- 	<import resource="applicationContext-services.xml"/> -->
+</beans>

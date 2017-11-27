@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Nongzi_caigou" table="NONGZI_CAIGOU">
+        <id name="nongzi_caigou_id" type="int">
+            <column name="NONGZI_CAIGOU_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="nongzi_mingcheng" type="java.lang.String">
+            <column name="NONGZI_MINGCHENG" />
+        </property>
+        <property name="nongzi_miaoshu" type="java.lang.String">
+            <column name="NONGZI_MIAOSHU" />
+        </property>
+        <property name="nongzi_qitaneirong" type="java.lang.String">
+            <column name="NONGZI_QITANEIRONG" />
+        </property>
+        <property name="nongzi_shuliang" type="int">
+            <column name="NONGZI_SHULIANG" />
+        </property>
+        <property name="nongzi_biaozhu" type="java.lang.String">
+            <column name="NONGZI_BIAOZHU" />
+        </property>
+        <property name="nongzi_guige" type="java.lang.String">
+            <column name="NONGZI_GUIGE" />
+        </property>
+        <property name="nongzi_jiage" type="java.lang.String">
+            <column name="NONGZI_JIAGE" />
+        </property>
+        <property name="nongzi_changjiadianhua" type="java.lang.String">
+            <column name="NONGZI_CHANGJIADIANHUA" />
+        </property>
+        <property name="nongzi_kucunliang" type="int">
+            <column name="NONGZI_KUCUNLIANG" />
+        </property>
+        <property name="nongzi_tupian_lianjie" type="java.lang.String">
+            <column name="NONGZI_TUPIAN_LIANJIE" />
+        </property>
+        <property name="nongzi_changjia_dizhi" type="java.lang.String">
+            <column name="NONGZI_CHANGJIA_DIZHI" />
+        </property>
+         <property name="nongzi_caigou_biaozhiwei" type="int">
+            <column name="NONGZI_CAIGOU_BIAOZHIWEI" />
+        </property>
+        <property name="nongzi_caigou_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="NONGZI_CAIGOU_GENGXIN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>

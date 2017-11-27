@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-12 9:26:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Rizhi" table="RIZHI">
+        <id name="rizhi_id" type="int">
+            <column name="RIZHI_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="fk_user_id" type="int">
+            <column name="FK_USER_ID" />
+        </property>
+        <property name="rizhi_duix_mingcheng" type="java.lang.String">
+            <column name="RIZHI_DUIX_MINGCHENG" />
+        </property>
+        <property name="rizhi_shij" type="java.sql.Timestamp">
+            <column name="RIZHI_SHIJ" />
+        </property>
+        <property name="rizhi_biaozhiwei" type="int">
+            <column name="RIZHI_BIAOZHIWEI" />
+        </property>
+    </class>
+</hibernate-mapping>

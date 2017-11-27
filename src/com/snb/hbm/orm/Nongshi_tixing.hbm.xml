@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Nongshi_tixing" table="NONGSHI_TIXING">
+        <id name="nongshi_tixing_id" type="int">
+            <column name="NONGSHI_TIXING_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="nongshi_tixing_timu" type="java.lang.String">
+            <column name="NONGSHI_TIXING_TIMU" />
+        </property>
+        <property name="nongshi_tixing_neirong" type="java.lang.String">
+            <column name="NONGSHI_TIXING_NEIRONG" />
+        </property>
+        <property name="fk_nongshi_tixing_user_id" type="int">
+            <column name="FK_NONGSHI_TIXING_USER_ID" />
+        </property>
+        <property name="nongshi_tixing_chuanjian_shijian" type="java.sql.Timestamp">
+            <column name="NONGSHI_TIXING_CHUANJIAN_SHIJIAN" />
+        </property>
+        <property name="nongshi_tixing_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="NONGSHI_TIXING_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="nongshi_tixing_biaozhiwei" type="int">
+            <column name="NONGSHI_TIXING_BIAOZHIWEI" />
+        </property>
+        <property name="nongshi_tixing_zhidingwei" type="int">
+            <column name="NONGSHI_TIXING_ZHIDINGWEI" />
+        </property>
+        <property name="browse_count" type="int">
+            <column name="BROWSE_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

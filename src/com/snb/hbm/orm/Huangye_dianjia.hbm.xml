@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-11 11:25:34 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.Huangye_dianjia" table="HUANGYE_DIANJIA">
+        <id name="huangye_id" type="int">
+            <column name="HUANGYE_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="huangye_dianjia_type" type="int">
+            <column name="HUANGYE_DIANJIA_TYPE" />
+        </property>
+        <property name="huangye_dianjia_mingcheng" type="java.lang.String">
+            <column name="HUANGYE_DIANJIA_MINGCHENG" />
+        </property>
+        <property name="huangye_dianjia_dianhua" type="java.lang.String">
+            <column name="HUANGYE_DIANJIA_DIANHUA" />
+        </property>
+        <property name="huangye_dianjia_dizhi" type="java.lang.String">
+            <column name="HUANGYE_DIANJIA_DIZHI" />
+        </property>
+        <property name="huangye_dianjia_tupian" type="java.lang.String">
+            <column name="HUANGYE_DIANJIA_TUPIAN" />
+        </property>
+        <property name="huangye_xiangxi" type="java.lang.String">
+            <column name="HUANGYE_XIANGXI" />
+        </property>
+        <property name="huangye_biaozhiwei" type="int">
+            <column name="HUANGYE_BIAOZHIWEI" />
+        </property>
+        <property name="huangye_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="HUANGYE_GENGXIN_SHIJIAN" />
+        </property>
+        <property name="huangye_zhidingwei" type="int">
+            <column name="HUANGYE_ZHIDINGWEI" />
+        </property>
+         <property name="huangye_dianjia_suoshuzhen" type="java.lang.String">
+            <column name="HUANGYE_DIANJIA_SUOSHUZHEN" />
+        </property>
+    </class>
+</hibernate-mapping>

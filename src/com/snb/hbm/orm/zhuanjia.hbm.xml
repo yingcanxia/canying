@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-26 17:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.snb.hbm.orm.ZhuanJia" table="ZHUANJIA">
+        <id name="zhuanjia_id" type="int">
+            <column name="ZHUANJIA_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="zhuanjia_mingcheng" type="java.lang.String">
+            <column name="ZHUANJIA_MINGCHENG" />
+        </property>
+        <property name="zhuanjia_zhicheng" type="java.lang.String">
+            <column name="ZHUANJIA_ZHICHENG" />
+        </property>
+        <property name="zhuanjia_lingyu" type="java.lang.String">
+            <column name="ZHUANJIA_LINGYU" />
+        </property>
+        <property name="zhuanjia_zhiban_shijian" type="java.lang.String">
+            <column name="ZHUANJIA_ZHIBAN_SHIJIAN" />
+        </property>
+        <property name="fk_keshi_id" type="int">
+            <column name="FK_KESHI_ID" />
+        </property>
+        <property name="zhuanjia_biaozhiwei" type="int">
+            <column name="ZHUANJIA_BIAOZHIWEI" />
+        </property>
+        <property name="zhuanjia_zhidingwei" type="int">
+            <column name="ZHUANJIA_ZHIDINGWEI" />
+        </property>
+        <property name="zhuanjia_gengxin_shijian" type="java.sql.Timestamp">
+            <column name="ZHUANJIA_GENGXIN_SHIJIAN" />
+        </property>
+    </class>
+</hibernate-mapping>
